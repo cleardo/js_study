@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<link media="all" rel="stylesheet" href="static/css/bootstrap.css" type="text/css" />
+<script src="static/js/jquery.min.js"></script>
+<script src="static/js/bootstrap.js"></script>
+<script src="static/js/nui.grid.js"></script>
+
+<div id="scrollDiv"></div>
+<script type="text/javascript">
+
+$(document).ready(function() {
+    $.getJSON('grid_data.php', function(json) {
+        console.log(json);
+        $('#scrollDiv').grid({
+                    title:'',
+                    fid : 'qa_id',
+                    custom_fun: function() {
+                    },
+                    fields : [
+                    {
+                        head:'订单名称', 
+                        name:'term_name', 
+                        width: 70, 
+                        render:function(colValue, rowData, rowIdx){
+                            var myQaInfo = '';
+                            myQaInfo += '<div class="absl dd-info">';
+                            myQaInfo += '<a class="term_info" term_id="" href="javascript:void(0)">'+colValue+'</a>';
+                            myQaInfo += '</div>';
+
+                            return myQaInfo;
+                        }
+                    }, 
+                    {
+                        head:'订单金额', 
+                        name:'cash', 
+                        width:60, 
+                        render: function(colValue, rowData, rowIdx) {
+                            return colValue;
+                        }
+                    }, 
+                    {
+                        head:'订单状态', 
+                        name:'status', 
+                        width:60, render:function(colValue, rowData, rowIdx) {
+                            if (colValue === 0) {
+                                return '未付款';
+                            } else {
+                                return '已付款';
+                            }
+                        }
+                    }, 
+                    {
+                        head:'操作', 
+                        name:'invoice_id', 
+                        width:60, 
+                        render:function(colValue, rowData, rowIdx) {
+                            opHtml = '';
+                            opHtml += '<button type="button" class="btn btn-primary" data-toggle="button">付款</button>';
+                            opHtml += '<a class="show-order" invoice_id="' + colValue + '" order_no="' + rowData.order_no + '" href="javascript:void(0)">查看</a> | ';
+
+                            opHtml += '<a class="cancel" invoice_id="'+colValue+'" href="javascript:void(0)">取消订单</a> ';
+                            return opHtml;
+                        }
+                    }
+                    ],
+                    data : json
+        });
+    });
+});
+
+/*
+*/
+
+</script>
+  
+</body>
+</html>

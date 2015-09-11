@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<link media="all" rel="stylesheet" href="static/css/bootstrap.css" type="text/css" />
+<script src="static/js/jquery.min.js"></script>
+<script src="static/js/bootstrap.js"></script>
+<script src="static/js/nui.scroll.js"></script>
+
+<div id="scrollDiv"></div>
+<script type="text/javascript">
+
+$(document).ready(function() {
+    $.getJSON('data.php', function(json) {
+        console.log(json);
+        $('#scrollDiv').scroll({
+            title: '测试',
+            fid: 'demo_scroll',
+            ttl: '共{ttl}笔',
+            // 显示查看所有元素的链接
+            ttlTxt: '查看所有',
+            // 显示的条数
+            showNum: 3,
+            hvWidth: 135,
+            // 数据块宽度
+            liWidth: 300,
+            render: function(node) {
+                return '<span>' + node.name + '</span>';
+            },
+            data: json
+        });
+    });
+});
+
+/*
+*/
+
+</script>
+  
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+<link media="all" rel="stylesheet" href="static/css/bootstrap.css" type="text/css" />
+</head>
+<body>
+<script src="static/js/jquery.min.js"></script>
+<script src="static/js/bootstrap.js"></script>
+<script src="static/js/nui.drop.js"></script>
+<script type="text/javascript">
+var dropData = [
+    {"name":"名称1","sort":"1","link_id":"1","tree_id":"11"},
+    {"name":"名称2","sort":"2","link_id":"2","tree_id":"11"},
+    {"name":"名称3","sort":"3","link_id":"3","tree_id":"10"},
+    {"name":"名称4","sort":"4","link_id":"4","tree_id":"10"},
+    {"name":"名称5","sort":"5","link_id":"5","tree_id":"10"}
+];
+
+$('#drop').drop({
+    fid : 'link_id', 
+    data : dropData  //json数据
+}).on('select', function(e, node){
+    console.log(node);
+});
+</script>
+
+<div id="scrollDiv"></div>
+<script type="text/javascript">
+
+$(document).ready(function() {
+    $.getJSON('drop_data.php', function(json) {
+        console.log(json);
+        $('#scrollDiv').drop({
+            fid : 'term_kind_id', // 行唯一标记字段
+            data : json
+        //}).on('select',function(e, {}) {
+            // 选择指定分类
+            // 事件处理函数
+            // $('#searchFrm').data('term_kind_id', ret.term_by_kind);
+        });
+    });
+});
+
+</script>
+</body>
+</html>

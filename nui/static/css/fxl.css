@@ -1,0 +1,22 @@
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+.navbar {
+	min-width:960px;
+}
+#container{
+	min-width:960px;	
+}
+.sidebar-nav {
+  padding: 9px 0;
+}
+#mainTab {
+	border-bottom: 0px solid #DDDDDD;
+}
+#mainTab li.active a {
+	background-color:#fff;color:#000;
+}
+input.error {
+    border: 1px solid red;
+}

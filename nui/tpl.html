@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<script src="static/js/jquery.min.js"></script>
+<script src="static/js/bootstrap.js"></script>
+<script src="static/js/module.js"></script>
+<script src="static/js/flowplayer.min.js"></script>
+<script>
+    define(function(require){
+         setup('static/js/', ['now','nui','fxl']);
+         var N = require('now');
+         var fxl = require('fxl');
+         
+         N.cfg.tpl = '/static/tpl/';
+         N.cmd('fxl.page.get_cfg', function(ret){
+            N.cfg.check = ret.check;
+            fxl.cfg = ret.fxl;
+            fxl.session = {
+                "unit":"0123456789123456",
+                "jxd":"",
+                "uid":"0000000000123456",
+                "name":"\u975e\u5b66\u5386\u7ba1\u7406\u5458",
+                "kind":0,
+                "site":"513e915fc0d8d692"
+            };
+            console.log(fxl.session);
+            fxl.cms = {
+                       site_id : '513e915fc0d8d692',
+                       jxd_id : '',
+                       unit_id : '0123456789123456'
+                    };
+            // var main = require('main');
+            // main.index();
+         });
+    });
+    </script>
+</body>
+</html>

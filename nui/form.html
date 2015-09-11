@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<!--<div id="searchFrm" data-api="frm" data-target="#frmTarget"></div>-->
+<div id="searchFrm"></div>
+<link media="all" rel="stylesheet" href="static/css/bootstrap.css" type="text/css" />
+<script src="static/js/jquery.min.js"></script>
+<script src="static/js/bootstrap.js"></script>
+<script src="static/js/nui.quick-form.js"></script>
+<script src="static/js/nui.form.js"></script>
+<script src="static/js/nui.slttown.js"></script>
+  
+<script type="text/javascript">
+var fxl = {};
+fxl.cfg = {};
+fxl.cfg.pxbzt = {};
+
+var ele = $('#searchFrm').quickfrm({
+    fields : [
+        {
+            name:'unit_id', 
+            mdl:'fxl', 
+            text:'单位:',
+            type:'select', 
+            selectData:fxl.cfg.pxbzt,
+            selectAll:'--请选择--',
+            val:''
+        },
+        {
+            name:'term_id', 
+            mdl:'fxl', 
+            text:'培训班:',
+            type:'select', 
+            selectData:fxl.cfg.pxbzt,
+            selectAll:'--请选择--',
+            val:''
+        },
+        {
+            name:'name', 
+            mdl:'fxl', 
+            text:'缴费方式:',
+            type: 'select',
+            selectData:fxl.cfg.pxbzt,
+            selectAll:'全部',
+            val:''
+        }, 
+        {
+           name:'up_time', 
+           mdl:'', 
+           text:'',
+           css:'input-medium search-query',
+           attr: {
+               'data-api':'datepick',
+               placeholder:"起始日期"
+           }
+       },
+       {
+           name:'up_time', 
+           mdl:'', 
+           text:'——',
+           css:'input-medium search-query',
+           attr: {
+               'data-api':'datepick',
+               placeholder:"终止日期"
+           }
+       },
+       {
+            name:'order_no', 
+            mdl:'fxl', 
+            text:'订单号:',
+            type: 'text',
+            val:''
+       }, 
+       {
+            name:'user_name', 
+            mdl:'fxl', 
+            text:'姓名: ',
+            type: 'text',
+            val:''
+       }, 
+       {
+            name:'user_idcard', 
+            mdl:'fxl', 
+            text:'身份证:',
+            type: 'text',
+            val:''
+       },        		      	   
+       {
+    	   text:'所属地区:',type:'div', id:'invProv1',css:{'class': 'pull-left'}
+            		      	   
+       }
+            		      	   
+
+    ],
+    submit: '搜索',
+    direct: 'h',
+    check:  false
+}).on('valOk',function(event,para){
+    alert('aa');
+    // 值ok后，会把表单的参数传给本函数
+    // 用验证过的参数来重新加载grid，这样，表单就不需要动作action
+    // $('#gridMyTerm').grid({nowPage:1,para:para}).grid('reload');
+});
+
+
+$('#invProv1').slttown(
+	{field : 'stu[town]'}
+);
+
+// 禁用提交按钮
+// $('#searchFrm').frm('enabled');
+
+</script>
+
+<h3>form fill 测试</h3>
+
+<div id="fillTest" style="border: 1px solid red; width: 200px; height: 200px">
+
+<span name="aa[name]"></span>
+
+</div>
+
+<script type="text/javascript">
+console.log($('#fillTest'));
+$('#fillTest').frm('fill', {
+    tbl: 'aa',
+    data: {
+            'name': 'test value'
+    }
+})
+</script>
+</body>
+</html>

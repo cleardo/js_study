@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<link media="all" rel="stylesheet" href="static/css/bootstrap.css" type="text/css" />
+<script src="static/js/jquery.min.js"></script>
+<script src="static/js/bootstrap.js"></script>
+<script src="static/js/nui.hselect.js"></script>
+
+<div id="scrollDiv"></div>
+<script type="text/javascript">
+
+$(document).ready(function() {
+    $.getJSON('hslt_data.php', function(json) {
+        console.log(json);
+        $('#scrollDiv').hselect({
+            fid : 'term_kind_id', // 行唯一标记字段
+            data : json,
+            para : {
+                hselect: true
+            }
+        //}).on('select',function(e, {}) {
+            // 选择指定分类
+            // 事件处理函数
+            // $('#searchFrm').data('term_kind_id', ret.term_by_kind);
+        });
+    });
+});
+
+/*
+*/
+
+</script>
+  
+</body>
+</html>

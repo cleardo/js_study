@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<link media="all" rel="stylesheet" href="static/css/bootstrap.css" type="text/css" />
+<script src="static/js/jquery.min.js"></script>
+<script src="static/js/bootstrap.js"></script>
+<script src="static/js/nui.mutidrop.js"></script>
+
+<div id="scrollDiv"></div>
+<script type="text/javascript">
+
+$(document).ready(function() {
+    $.getJSON('mutidrop_data.php', function(json) {
+        console.log(json);
+        $('#scrollDiv').mutidrop({
+                                data : json,
+                                name : 'kd_techs[kd_techs]',
+                                fid : 'tech_id'
+        });
+    });
+});
+
+/*
+*/
+
+</script>
+  
+</body>
+</html>

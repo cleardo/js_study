@@ -1,0 +1,431 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>UI_DOC文档</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="static/css/bootstrap.css" rel="stylesheet">
+<link href="static/css/fxl.css" rel="stylesheet">
+<link href="static/css/nui.css" rel="stylesheet">
+<link href="static/css/prettify.css" rel="stylesheet">
+<link href="static/css/docs.css" rel="stylesheet">
+<style>
+#divNext {
+    margin-left:-20px;
+}
+</style>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container-fluid">
+                <div class="row-fluid">
+                    <a class="brand" href="javascript:void(0)">UI_DOC文档</a>
+                    <div class="nav-collapse collapse">
+                        <div class="navbar-text pull-right">
+                            <span id="spanLoginMsg"></span> <a href="javascript:void(0);"
+                                id="aLogout"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" id="container">
+        <div class="row-fluid">
+            <div class="span2">
+                <div class="accordion" id="menulist">
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse"
+                                data-parent="#menulist" href="#ac-modal"><b>对话框</b></a>
+                        </div>
+                        <div id="ac-modal" class="accordion-body collapse in">
+                            <div class="accordion-inner">
+                                <ul class="nav nav-list">
+                                    <li class="active"><a href="#" menu="jing">静态案例</a></li>
+                                    <li><a href="#" menu="dong">动态演示</a></li>
+                                    <!-- <li><a href="#" menu="usage">用法</a></li> -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse"
+                                data-parent="#menulist" href="#ac-dropdown"><b>下拉菜单</b></a>
+                        </div>
+                        <div id="ac-dropdown" class="accordion-body collapse">
+                            <div class="accordion-inner">
+                                <ul class="nav nav-list">
+                                    <li><a href="#" menu="navbar">导航条</a></li>
+                                    <li><a href="#" menu="tabs">标签式导航</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse"
+                                data-parent="#menulist" href="#ac-scrollspy"><b>监听滚动</b></a>
+                        </div>
+                        <div id="ac-scrollspy" class="accordion-body collapse">
+                            <div class="accordion-inner">
+                                <ul class="nav nav-list">
+                                    <li><a href="#" menu="eg">例子</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse"
+                                data-parent="#menulist" href="#ac-tabs"><b>标签页</b></a>
+                        </div>
+                        <div id="ac-tabs" class="accordion-body collapse">
+                            <div class="accordion-inner">
+                                <ul class="nav nav-list">
+                                    <li><a href="#" menu="eg">例子</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse"
+                                data-parent="#menulist" href="#ac-tooltip"><b>提示</b></a>
+                        </div>
+                        <div id="ac-tooltip" class="accordion-body collapse">
+                            <div class="accordion-inner">
+                                <ul class="nav nav-list">
+                                    <li><a href="#" menu="eg">例子</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse"
+                                data-parent="#menulist" href="#ac-popover"><b>提示框</b></a>
+                        </div>
+                        <div id="ac-popover" class="accordion-body collapse">
+                            <div class="accordion-inner">
+                                <ul class="nav nav-list">
+                                    <li><a href="#" menu="eg">例子</a></li>
+                                    <li><a href="#" menu="dong">动态演示</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse"
+                                data-parent="#menulist" href="#ac-alert"><b>通知</b></a>
+                        </div>
+                        <div id="ac-alert" class="accordion-body collapse">
+                            <div class="accordion-inner">
+                                <ul class="nav nav-list">
+                                    <li><a href="#" menu="eg">例子</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse"
+                                data-parent="#menulist" href="#ac-button"><b>按钮</b></a>
+                        </div>
+                        <div id="ac-button" class="accordion-body collapse">
+                            <div class="accordion-inner">
+                                <ul class="nav nav-list">
+                                    <li><a href="#" menu="stateful">状态式按钮</a></li>
+                                    <li><a href="#" menu="toggle">切换式按钮</a></li>
+                                    <li><a href="#" menu="checkbox">复选框按钮</a></li>
+                                    <li><a href="#" menu="radio">单选框按钮</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse"
+                                data-parent="#menulist" href="#ac-collapse"><b>切换</b></a>
+                        </div>
+                        <div id="ac-collapse" class="accordion-body collapse">
+                            <div class="accordion-inner">
+                                <ul class="nav nav-list">
+                                    <li><a href="#" menu="eg">例子</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse"
+                                data-parent="#menulist" href="#ac-carousel"><b>轮播</b></a>
+                        </div>
+                        <div id="ac-carousel" class="accordion-body collapse">
+                            <div class="accordion-inner">
+                                <ul class="nav nav-list">
+                                    <li><a href="#" menu="eg">例子</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse"
+                                data-parent="#menulist" href="#ac-typeahead"><b>输入提醒</b></a>
+                        </div>
+                        <div id="ac-typeahead" class="accordion-body collapse">
+                            <div class="accordion-inner">
+                                <ul class="nav nav-list">
+                                    <li><a href="#" menu="eg">例子</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse"
+                                data-parent="#menulist" href="#ac-affix"><b>附加导航</b></a>
+                        </div>
+                        <div id="ac-affix" class="accordion-body collapse">
+                            <div class="accordion-inner">
+                                <ul class="nav nav-list">
+                                    <li><a href="#" menu="eg">例子</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse"
+                                data-parent="#menulist" href="#ac-tree"><b>目录树</b></a>
+                        </div>
+                        <div id="ac-tree" class="accordion-body collapse">
+                            <div class="accordion-inner">
+                                <ul class="nav nav-list">
+                                    <li><a href="#" menu="eg">例子</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse"
+                                data-parent="#menulist" href="#ac-grid"><b>表格</b></a>
+                        </div>
+                        <div id="ac-grid" class="accordion-body collapse">
+                            <div class="accordion-inner">
+                                <ul class="nav nav-list">
+                                    <li><a href="#" menu="eg">例子</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse"
+                                data-parent="#menulist" href="#ac-picshow"><b>弹窗图片</b></a>
+                        </div>
+                        <div id="ac-picshow" class="accordion-body collapse">
+                            <div class="accordion-inner">
+                                <ul class="nav nav-list">
+                                    <li><a href="#" menu="eg">例子</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse"
+                                data-parent="#menulist" href="#ac-scroll"><b>滑动控件</b></a>
+                        </div>
+                        <div id="ac-scroll" class="accordion-body collapse">
+                            <div class="accordion-inner">
+                                <ul class="nav nav-list">
+                                    <li><a href="#" menu="eg">例子</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse"
+                                data-parent="#menulist" href="#ac-hselect"><b>横向select</b></a>
+                        </div>
+                        <div id="ac-hselect" class="accordion-body collapse">
+                            <div class="accordion-inner">
+                                <ul class="nav nav-list">
+                                    <li><a href="#" menu="eg">例子</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse"
+                                data-parent="#menulist" href="#ac-repeat"><b>重复显示</b></a>
+                        </div>
+                        <div id="ac-repeat" class="accordion-body collapse">
+                            <div class="accordion-inner">
+                                <ul class="nav nav-list">
+                                    <li><a href="#" menu="eg">例子</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse"
+                                data-parent="#menulist" href="#ac-drop"><b>下拉</b></a>
+                        </div>
+                        <div id="ac-drop" class="accordion-body collapse">
+                            <div class="accordion-inner">
+                                <ul class="nav nav-list">
+                                    <li><a href="#" menu="eg">例子</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse"
+                                data-parent="#menulist" href="#ac-mutidrop"><b>下拉多选</b></a>
+                        </div>
+                        <div id="ac-mutidrop" class="accordion-body collapse">
+                            <div class="accordion-inner">
+                                <ul class="nav nav-list">
+                                    <li><a href="#" menu="eg">例子</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse"
+                                data-parent="#menulist" href="#ac-frm"><b>表单处理</b></a>
+                        </div>
+                        <div id="ac-frm" class="accordion-body collapse">
+                            <div class="accordion-inner">
+                                <ul class="nav nav-list">
+                                    <li><a href="#" menu="eg">例子</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse"
+                                data-parent="#menulist" href="#ac-quickfrm"><b>表单创建</b></a>
+                        </div>
+                        <div id="ac-quickfrm" class="accordion-body collapse">
+                            <div class="accordion-inner">
+                                <ul class="nav nav-list">
+                                    <li><a href="#" menu="eg">例子</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse"
+                                data-parent="#menulist" href="#ac-numinput"><b>Numinput</b></a>
+                        </div>
+                        <div id="ac-numinput" class="accordion-body collapse">
+                            <div class="accordion-inner">
+                                <ul class="nav nav-list">
+                                    <li><a href="#" menu="eg">例子</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse"
+                                data-parent="#menulist" href="#ac-flash"><b>Flash</b></a>
+                        </div>
+                        <div id="ac-flash" class="accordion-body collapse">
+                            <div class="accordion-inner">
+                                <ul class="nav nav-list">
+                                    <li><a href="#" menu="eg">例子</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse"
+                                data-parent="#menulist" href="#ac-fileupload"><b>文件上传</b></a>
+                        </div>
+                        <div id="ac-fileupload" class="accordion-body collapse">
+                            <div class="accordion-inner">
+                                <ul class="nav nav-list">
+                                    <li><a href="#" menu="eg">例子</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse"
+                                data-parent="#menulist" href="#ac-datepick"><b>日期选择</b></a>
+                        </div>
+                        <div id="ac-datepick" class="accordion-body collapse">
+                            <div class="accordion-inner">
+                                <ul class="nav nav-list">
+                                    <li><a href="#" menu="eg">例子</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse"
+                                data-parent="#menulist" href="#ac-chat"><b>聊天</b></a>
+                        </div>
+                        <div id="ac-chat" class="accordion-body collapse">
+                            <div class="accordion-inner">
+                                <ul class="nav nav-list">
+                                    <li><a href="#" menu="eg">例子</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="span10" id="Main">
+                <div class="span10" id="divMain"></div>
+                <div class="span10" id="divNext"></div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <hr>
+        <footer>
+            <p class="pull-right">
+                <a href="#top" target="_self">返回顶部</a>
+            </p>
+            <p>&copy; 2013 网龙公司</p>
+        </footer>
+    </div>
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/bootstrap.js"></script>
+    <script src="static/js/module.js"></script>
+    <script src="static/js/prettify.js"></script>
+    <script>
+    define(function(require){
+         setup('static/js/', ['nui']);
+         var N = require('now');
+         N.cfg.tpl = 'doc/tpl/';
+         setup('doc/js/');
+         
+        doc = require('doc');
+        doc.index.init();
+    });
+    </script>
+</body>
+</html>

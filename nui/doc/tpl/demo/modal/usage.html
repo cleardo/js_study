@@ -1,0 +1,112 @@
+<div class="span12">
+	<h2>用法</h2>
+	<div class="span12">
+		<ul id="myTab" class="nav nav-tabs">
+			<li class="active"><a href="#options" data-toggle="tab" style="font-size:16px;">选项</a></li>
+			<li><a href="#methods" data-toggle="tab" style="font-size:16px;">方法</a></li>
+			<li><a href="#events" data-toggle="tab" style="font-size:16px;">事件</a></li>
+			<li><a href="#use_data" data-toggle="tab" style="font-size:16px;">使用数据属性</a></li>
+			<li><a href="#use_js" data-toggle="tab" style="font-size:16px;">使用JavaScript</a></li>
+		</ul>
+		<div id="myTabContent" class="tab-content">
+			<div class="tab-pane fade" id="use_data">
+          		<p>无需写JavaScript, 可启用对话框. 在一个控制元素上设置 <code>data-toggle="modal"</code> , 像按钮, 针对一个特定的对话框, 可进行<code>data-target="#foo"</code> 或者 <code>href="#foo"</code> 间的切换.</p>
+         		<pre class="prettyprint linenums">&lt;button type="button" data-toggle="modal" data-target="#myModal"&gt;Launch modal&lt;/button&gt;</pre>				
+			</div>
+			<div class="tab-pane fade" id="use_js">
+            	<p>用一行JavaScript代码, 调用id为 <code>myModal</code> 的对话框:</p>
+          		<pre class="prettyprint linenums">$('#myModal').modal(options)</pre>
+      		</div>
+      		<div class="tab-pane fade in active" id="options">
+      			<p style="color:blue;">选项的传递可通过数据属性或JavaScript. 对于数据属性, 需要附加选项名称 <code>data-</code>, 如 <code>data-backdrop=""</code>.</p>
+      			<table class="table table-bordered table-striped">
+            		<thead>
+             			<tr>
+			               <th style="width: 20%;">名称</th>
+			               <th style="width: 20%;">类型</th>
+			               <th style="width: 20%;">默认</th>
+			               <th style="width: 40%;">描述</th>
+             			</tr>
+            		</thead>
+            		<tbody>
+             			<tr>
+			               <td>backdrop</td>
+			               <td>boolean</td>
+			               <td>true</td>
+			               <td>包括一个对话框背景元素. 另外 <code>static</code>(false情况) 背景下, 点击对话框外的区域不会关闭对话框.</td>
+             			</tr>
+             			<tr>
+			               <td>keyboard</td>
+			               <td>boolean</td>
+			               <td>true</td>
+			               <td>按下Esc键时关闭对话框.</td>
+             			</tr>
+             			<tr>
+			               <td>show</td>
+			               <td>boolean</td>
+			               <td>true</td>
+			               <td>初始化时显示对话框.</td>
+		             	</tr>
+		             	<tr>
+			               <td>remote</td>
+			               <td>path</td>
+			               <td>false</td>
+			               <td><p>如果需要提供远程url, 内容将通过jQuery的<code>load</code>方法加载和注入在<code>.modal-body</code>. 假如你使用数据API, 你可以另外使用 <code>href</code> 标签指定远程源. 如下所示: </p>
+              			   <pre class="prettyprint linenums"><code>&lt;a data-toggle="modal" href="remote.html" data-target="#modal"&gt;click me&lt;/a&gt;</code></pre></td>
+             			</tr>
+            		</tbody>
+          		</table>
+      		</div>
+      		<div class="tab-pane fade" id="methods">
+      			<h4>.modal(options)</h4>
+          		<p>通过一个对话框形式显示你的内容. 接受一个<code>object</code>的可选选项.</p>
+				<pre class="prettyprint linenums">
+$('#myModal').modal({
+  keyboard: false
+})</pre>
+          		<h4>.modal('toggle')</h4>
+          		<p>切换对话框.</p>
+          		<pre class="prettyprint linenums">$('#myModal').modal('toggle')</pre>
+          		<h4>.modal('show')</h4>
+          		<p>显示对话框.</p>
+          		<pre class="prettyprint linenums">$('#myModal').modal('show')</pre>
+         	 	<h4>.modal('hide')</h4>
+          		<p>关闭对话框.</p>
+          		<pre class="prettyprint linenums">$('#myModal').modal('hide')</pre>
+      		</div>
+      		<div class="tab-pane fade" id="events">
+				<p>Bootstrap的对话框类提供了一些事件和对话框功能挂钩.</p>
+          		<table class="table table-bordered table-striped">
+           			<thead>
+             			<tr>
+               				<th style="width: 30%;">事件</th>
+               				<th style="width: 70%;">描述</th>
+             			</tr>
+            		</thead>
+            		<tbody>
+             			<tr>
+			               <td>show</td>
+			               <td>当<code>show</code>实例被调用, 此事件会立即触发.</td>
+             			</tr>
+             			<tr>
+			               <td>shown</td>
+			               <td>对话框已呈现完毕时触发.</td>
+			            </tr>
+			            <tr>
+			               <td>hide</td>
+			               <td>当<code>hide</code>实例被调用, 此事件会立即触发.</td>
+             			</tr>
+             			<tr>
+			               <td>hidden</td>
+			               <td>对话框已隐藏完毕时触发.</td>
+             			</tr>
+            		</tbody>
+          		</table>
+          		<pre class="prettyprint linenums">
+$('#myModal').on('hidden', function () {
+  // do something…
+})</pre>
+      		</div>
+		</div>
+	</div>
+</div>

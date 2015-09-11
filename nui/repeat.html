@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<link media="all" rel="stylesheet" href="static/css/bootstrap.css" type="text/css" />
+<script src="static/js/jquery.min.js"></script>
+<script src="static/js/bootstrap.js"></script>
+<script src="static/js/nui.repeat.js"></script>
+
+<div id="scrollDiv"></div>
+<script type="text/javascript">
+
+$(document).ready(function() {
+    $.getJSON('data.php', function(json) {
+        console.log(json);
+        $('#scrollDiv').repeat({
+            title: '测试',
+            fid: 'demo_scroll',
+            row : 3,    // 每行3个
+            size : 9,   // 每页9个,如果是空则显示所有
+            render: function(node) {
+                return '<span>' + node.name + '</span>';
+            },
+            data: json
+        });
+    });
+});
+
+/*
+*/
+
+</script>
+  
+</body>
+</html>
